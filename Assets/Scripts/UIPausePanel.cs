@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIPausePanel : MonoBehaviour
@@ -13,6 +14,12 @@ public class UIPausePanel : MonoBehaviour
         pauseBtn.onClick.AddListener(() => Pause());
 
         transform.Find("panel").Find("continueBtn").GetComponent<Button>().onClick.AddListener(() => UnPause());
+
+        transform.Find("panel").Find("restartBtn").GetComponent<Button>().onClick.AddListener(() =>
+        {
+            audioSource.PlayOneShot(buttonSFX);
+            SceneManager.LoadScene("GameScene");
+        });
 
         gameObject.SetActive(false);
     }

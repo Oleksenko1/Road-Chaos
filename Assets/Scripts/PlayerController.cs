@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
         Instance = this;
 
         rb = GetComponent<Rigidbody>();
+
+        Time.timeScale = 1f;
     }
     private void Update()
     {

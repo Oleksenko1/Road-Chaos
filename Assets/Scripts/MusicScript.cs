@@ -5,13 +5,16 @@ using UnityEngine.Audio;
 
 public class MusicScript : MonoBehaviour
 {
-    [SerializeField] private AudioMixerSnapshot snapshot;
+    [SerializeField] private AudioMixerSnapshot quiteSnapshot;
+    [SerializeField] private AudioMixerSnapshot defaultSnapshot;
+
     private void Start()
     {
         PlayerController.Instance.OnDied += QuiteMusic;
+        defaultSnapshot.TransitionTo(0.1f);
     }
     private void QuiteMusic()
     {
-        snapshot.TransitionTo(1f);
+        quiteSnapshot.TransitionTo(1f);
     }
 }

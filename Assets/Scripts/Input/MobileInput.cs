@@ -20,6 +20,7 @@ public class MobileInput : MonoBehaviour
             Destroy(controlPanel.gameObject);
             Destroy(this);
         }
+        Application.targetFrameRate = -1;
 
         Button leftBtn = controlPanel.Find("leftBtn").GetComponent<Button>();
         Button rightBtn = controlPanel.Find("rightBtn").GetComponent<Button>();
